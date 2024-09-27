@@ -10,7 +10,7 @@ AsyncCompose 是一个轻量的中间件组合器，适用于处理异步操作�
 
 ## 安装
 ```bash
-npm install async-compose-middleware
+npm install @dhlx/async-compose
 ```
 
 ## 使用场景
@@ -22,7 +22,7 @@ AsyncCompose 适用于需要多个异步操作链式执行的场景。典型使�
 
 ### 示例 1：基本用法
 ```typescript
-import { AsyncCompose, Middleware } from 'async-compose-middleware';
+import { AsyncCompose, Middleware } from '@dhlx/async-compose';
 
 // 定义中间件
 const middleware1: Middleware<{ name: string }> = async (ctx, next) => {
@@ -60,7 +60,7 @@ All middlewares executed.
 
 ```typescript
 
-import { AsyncCompose, Middleware } from 'async-compose-middleware';
+import { AsyncCompose, Middleware } from '@dhlx/async-compose';
 
 // 中间件1 - 正常执行
 const middleware1: Middleware<{ name: string }> = async (ctx, next) => {
@@ -91,7 +91,7 @@ Caught an error: Something went wrong
 如果中间件不小心多次调用 next()，AsyncCompose 会抛出错误并终止执行。
 
 ```typescript
-import { AsyncCompose, Middleware } from 'async-compose-middleware';
+import { AsyncCompose, Middleware } from '@dhlx/async-compose';
 
 // 中间件 - 多次调用 next()
 const middleware: Middleware<{ name: string }> = async (ctx, next) => {
